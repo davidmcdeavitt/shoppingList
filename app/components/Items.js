@@ -13,8 +13,9 @@ class Items extends Component {
   addToList(event) {
     event.preventDefault();
     const { items } = this.state;
-    const addItem = 'test';
+    const addItem = this.addItem.value;
     this.setState({ item: [...this.state.item.addItem] });
+    console.log(this.state.item);
   }
 
   render() {
@@ -24,7 +25,7 @@ class Items extends Component {
         <form onSubmit={(event) => { this.addToList(event) }}>
           <label>
             Name:
-              <input type="text" item={this.state.item.name} />
+              <input type="text" ref={(input) => { this.addItem = input }} />
           </label>
           <input type="submit" value="Submit" />
         </form>
