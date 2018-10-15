@@ -5,19 +5,23 @@ class Items extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: [{ name: '', itemInCart: false }]
+      item: ['pizza', 'milk', 'cookies'],
+      // itemInCart: false
     };
     this.addToList = this.addToList.bind(this);
   }
   addToList(event) {
-    this.setState({ item: event.target.item.name });
-    console.log(this.state.item.name);
+    event.preventDefault();
+    const { items } = this.state;
+    const addItem = 'test';
+    this.setState({ item: [...this.state.item.addItem] });
   }
+
   render() {
     return (
 
       <div className="AdditionForm">
-        <form onSubmit={this.addToList}>
+        <form onSubmit={(event) => { this.addToList(event) }}>
           <label>
             Name:
               <input type="text" item={this.state.item.name} />
