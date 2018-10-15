@@ -1,5 +1,10 @@
 body{
   background: red;
   text: black;
-  h1: black;
+  width: 25%;
+  height: 30%;
+}
+form{
+  background: green;
+  font-size: 16px;
 }
